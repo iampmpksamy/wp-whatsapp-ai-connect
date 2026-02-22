@@ -1,0 +1,32 @@
+name: Build WordPress Plugin ZIP
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Remove unnecessary files
+        run: |
+          rm -rf .git
+          rm -rf .github
+          rm -rf node_modules
+          rm -f *.zip
+
+      - name: Create plugin zip
+        run: |
+          zip -r wp-whatsapp-ai-connect.zip . -x "*.git*" "*.github*" "node_modules/*"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wp-whatsapp-ai-connect
+          path: wp-whatsapp-ai-connect.zip
