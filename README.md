@@ -1,7 +1,3 @@
-# wp-whatsapp-ai-connect
-Smart WhatsApp floating chat plugin with automation-ready architecture for modern WordPress websites.
-
-
 # WP WhatsApp AI Connect
 
 Smart WhatsApp floating chat plugin with automation-ready architecture.
@@ -18,3 +14,5 @@ Smart WhatsApp floating chat plugin with automation-ready architecture.
 
 ## Author
 IAMPMPKSAMY
+
+
